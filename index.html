@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="./path/app.js"></script>
+    <link rel="stylesheet" href="./styles/utils.css">
+    <link rel="stylesheet" href="./styles/body.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <script
+      src="https://kit.fontawesome.com/e582ecfb98.js"
+      crossorigin="anonymous"
+    ></script>
+</head>
+<body>
+    <header>
+         <!-- Navbar starts from here -->
+    <nav class="navigation m-auto">
+        <div class="middle">
+          <a href="./index.html"><b> PokeDex</b></a>
+        </div>
+        <div class="left">
+          <ul>
+            <li><a class="header-elements" href="./index.html">Home</a></li>
+            <li><a class="header-elements" href="./about.html">About</a></li>
+            <!-- <li><a class="header-elements" href="./contact.html">Contact</a></li> -->
+          </ul>
+        </div>
+        <div class="right">
+          <input type="text" placeholder="Article Search" />
+          <button class="btn"><i class="fa fa-magnifying-glass"></i></button>
+        </div>
+      </nav>
+      <!-- Navbar ends -->
+    </header>
+    <div class="container max-width-1 m-auto">
+        <!-- <h1>List of Pokemons</h1> -->
+        <ul class="card" id="pokebox">
+            
+        </ul>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+body{
+    background-color: rgb(109, 151, 208);
+}
+img.img{
+    height: 150px;
+    border-radius: 5px;
+}
+.img:hover{
+    transform: scale(1.5);
+    z-index: 2;
+    transition: 1s;
+}
+
+.card{
+    padding-inline-start: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+    grid-gap: 10px;
+    
+}
+.heading{
+    font-family: var(--font2);
+    font-size: 25px;
+    
+}
+.card li{
+    text-decoration: none;
+    list-style: none;
+    font-family: var(--font5);
+    font-size: 18px;
+    padding: 15px 5px;
+    text-align: center;
+    background-color: rgb(169, 215, 244);
+}

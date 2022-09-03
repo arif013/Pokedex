@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Hammersmith+One&display=swap');
+
+/* Defining some global variables */
+:root{
+    --font1: 'Pacifico', cursive;
+    --font2: 'Rubik', sans-serif;
+    --font3: 'Kanit', sans-serif;
+    --font4: 'Concert One', cursive;
+    --font5: 'Hammersmith One', sans-serif;
+}
+
+.max-width-0{
+    max-width: 94vw;
+}
+.max-width-1{
+    max-width: 70vw;
+}
+.max-width-2{
+    max-width: 533px;
+}
+.m-auto{
+    margin: auto;
+}
+.right{
+    display: flex;
+    max-width: 20%;
+    height: 45%;
+}
+.btn{
+    padding: 8px;
+    background-color: rgb(45, 148, 238);
+    color: white;
+    border: 1px solid grey;
+    width: 15%;
+}
+.btn:hover{
+    background-color: rgb(23, 56, 83);
+    cursor: pointer;
+}
+.right input{
+    padding: 8px;
+    border: 1px solid rgb(156, 151, 151);
+    background: #f1f1f1;
+    color: white;
+    width: 85%;
+}
+a:hover{
+    color: rgb(13, 62, 109);
+}
