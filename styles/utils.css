@@ -31,9 +31,10 @@
 }
 .btn{
     padding: 8px;
+    border-radius: 8px;
     background-color: rgb(45, 148, 238);
     color: white;
-    border: 1px solid grey;
+    border: 2px solid rgb(0, 0, 0);
     width: 15%;
 }
 .btn:hover{
@@ -41,8 +42,9 @@
     cursor: pointer;
 }
 .right input{
+    border-radius: 8px;
     padding: 8px;
-    border: 1px solid rgb(156, 151, 151);
+    border: 2px solid rgb(0, 0, 0);
     background: #f1f1f1;
     color: white;
     width: 85%;

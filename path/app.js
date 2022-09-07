@@ -12,7 +12,7 @@ const fetchPokemon=()=>{
             name: data.name,
             weight: data.weight,
             height:data.height,
-            image: data.sprites['front_default'],
+            image: data.sprites.front_default,
             type: data.types.map((type)=>type.type.name).join('')
         }))
         displayPokemon(pokemon);
@@ -32,3 +32,22 @@ const displayPokemon=(pokemon)=>{
 }
 
 fetchPokemon();
+
+let current_page=1;
+let rows = 10;
+
+function DisplayList(items,wrapper,rows_per_page,page){
+    let start = rows_per_page * page;
+    let end = start + rows_per_page;
+    let paginatedItems = items.slice(start, end);
+
+    for(let j=0; j<paginatedItems.length; j++){
+        let item = paginatedItems[j];
+        let item_element = document.createElement('div');
+        item_element.classList.add('item');
+        item_element.innerText = item;
+
+        wrapper.appendChild(item_element);
+        console.log(item_element);
+    }
+}

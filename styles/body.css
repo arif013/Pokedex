@@ -16,6 +16,7 @@ img.img{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
     grid-gap: 10px;
+    margin-bottom: 8px;
     
 }
 .heading{
@@ -31,4 +32,41 @@ img.img{
     padding: 15px 5px;
     text-align: center;
     background-color: rgb(169, 215, 244);
+    border-radius: 5px;
+}
+
+/* Footer Starts */
+.footer{
+    height: 10%;
+    background-color: rgb(251, 246, 93);
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+}
+.footer label{
+    font-size: 25px;
+    padding: 8px;
+    font-family: var(--font4);
+    color: rgb(18, 44, 65);
+}
+.footer input{
+    padding: 8px;
+    border: 1px solid grey;
+    margin: 0 5px;
+    border-radius: 3px;
+    font-size: 15px;
+
+}
+.btn-foot{
+    border-radius: 5px;
+    font-size: large;
+}
+.copyright{
+    text-align: center;
+    font-family: var(--font2);
+    font-size: 15px;
+    padding: 10px 0;
+    background-color: black;
+    color: white;
+    border-top: 5px solid white;
 }
