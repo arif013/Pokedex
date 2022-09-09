@@ -3,8 +3,8 @@ console.log("Here we go");
 let pokebox = document.getElementById("pokebox");
 const fetchPokemon=()=>{
     const promises=[];
-    for(let i=1;i<21;i++){
-        const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
+    for(let i=1;i<=200;i++){
+        const url = `https://pokeapi.co/api/v2/pokemon/${i}?`;
         promises.push(fetch(url).then((response) => response.json()));
     }
     Promise.all(promises).then((result) => {
@@ -18,9 +18,16 @@ const fetchPokemon=()=>{
         displayPokemon(pokemon);
     })
 }
+let prev = document.getElementById("button_prev");
+let next = document.getElementById("button_next");
+let start = 0;
+let pageSize = 12;
 const displayPokemon=(pokemon)=>{
+    pokebox.innerHTML='';
     console.log(pokemon);
-    const PokemonHtml =pokemon.map((poke)=> `
+    let item = pokemon.slice (start, start+pageSize);
+    console.log(item);
+    const PokemonHtml =item.map((poke)=> `
         <li>
         <h2 class="heading"><strong>${poke.name.toUpperCase()}</strong></h2>
         <img class="img" src="${poke.image}" alt="" srcset="">
@@ -29,25 +36,19 @@ const displayPokemon=(pokemon)=>{
         <p>Type: ${poke.type}</p>
         </li>`).join('');
         pokebox.innerHTML+=PokemonHtml;
-}
-
+        prev.addEventListener('click', ()=>{
+            if(start>=pageSize){
+                start = start - pageSize;
+                displayPokemon(pokemon);
+            }
+        })
+        next.addEventListener('click', ()=>{
+            if(start+pageSize<pokemon.length){
+                start = start + pageSize;
+                displayPokemon(pokemon);
+            }
+        })
+        
+    }
 fetchPokemon();
 
-let current_page=1;
-let rows = 10;
-
-function DisplayList(items,wrapper,rows_per_page,page){
-    let start = rows_per_page * page;
-    let end = start + rows_per_page;
-    let paginatedItems = items.slice(start, end);
-
-    for(let j=0; j<paginatedItems.length; j++){
-        let item = paginatedItems[j];
-        let item_element = document.createElement('div');
-        item_element.classList.add('item');
-        item_element.innerText = item;
-
-        wrapper.appendChild(item_element);
-        console.log(item_element);
-    }
-}
