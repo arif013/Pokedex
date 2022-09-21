@@ -1,3 +1,6 @@
+:root{
+    --background-color: rgb(251, 246, 93);
+}
 body{
     background-color: rgb(109, 151, 208);
 }
@@ -44,7 +47,7 @@ img.img{
 }
 .change button{
     padding: 10px 5px;
-    background-color: rgb(251, 246, 93);
+    background-color: var(--background-color);
     margin: 8px 5px;
     list-style: none;
     width: 70px;
@@ -53,16 +56,12 @@ img.img{
     font-family: var(--font3);
     color: black;
 }
-/* .change a{
-    text-decoration: none;
-    font-family: var(--font3);
-    color: black;
-} */
+
 
 /* Footer Starts */
 .footer{
     height: 10%;
-    background-color: rgb(251, 246, 93);
+    background-color: var(--background-color);
     display: flex;
     justify-content: center;
     padding: 15px 0;
