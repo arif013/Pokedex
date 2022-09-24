@@ -1,9 +1,24 @@
 console.log("Let's start the game")
+const searchInput = document.getElementById("data-search")
 
 let pokebox = document.getElementById("pokebox");
-var pokemon;
+let prev = document.getElementById("button_prev");
+let next = document.getElementById("button_next");
+var pokemon=[];
 const promises =[];
 
+
+// Search event
+searchInput.addEventListener("keyup", e=>{
+    const value = e.target.value
+    console.log(value)
+    const filterCharacters = pokemon.filter(character=>{
+        return character.name.includes(value)
+    })
+    console.log(filterCharacters)
+    displayPokemon(filterCharacters)
+})
+    
 // Data is fetched from URL 
 for(let i=1;i<51;i++){
     const url = `https://pokeapi.co/api/v2/pokemon/${i}`
@@ -11,7 +26,7 @@ for(let i=1;i<51;i++){
 }
 
 // Data is mapped in required format
-Promise.all(promises).then(result =>{
+ Promise.all(promises).then(result =>{
      pokemon = result.map(data=>({
         name: data.name,
         weight: data.weight,
@@ -23,16 +38,15 @@ Promise.all(promises).then(result =>{
 })
 
 // Buttons and number of elements shown
-let prev = document.getElementById("button_prev");
-let next = document.getElementById("button_next");
+
 let start = 0;
 let pageSize = 12;
 
 // Pokemons displayed
 const displayPokemon = (pokemon)=>{
         pokebox.innerHTML='';
-    let item = pokemon.slice (start, start+pageSize);
-    const PokemonHtml =item.map((poke)=> `
+        let item = pokemon.slice (start, start+pageSize);
+        const PokemonHtml =item.map((poke)=> `
         <li>
         <h2 class="heading"><strong>${poke.name.toUpperCase()}</strong></h2>
         <img class="img" src="${poke.image}" alt="" srcset="">
@@ -49,8 +63,6 @@ prev.addEventListener('click', ()=>{
         start = start - pageSize;
         displayPokemon(pokemon);
         console.log(start)
-    }else{
-        button.disabled = true
     }
 })
 
@@ -62,6 +74,6 @@ next.addEventListener('click', ()=>{
         console.log(start)
     }
 })
-    
+
 
 
