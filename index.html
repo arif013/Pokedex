@@ -5,46 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PokeDex</title>
-    <script type="module" src="./path/app.js"></script>
+    
     <link rel="stylesheet" href="./styles/utils.css">
     <link rel="stylesheet" href="./styles/body.css">
     <link rel="stylesheet" href="./styles/navbar.css">
+    <script type="module" src="./path/app.js"></script>
     <script
       src="https://kit.fontawesome.com/e582ecfb98.js"
       crossorigin="anonymous"
     ></script>
 </head>
 <body>
-    <header>
          <!-- Navbar starts from here -->
     <nav class="navigation m-auto">
         <div class="middle">
-          <a href="./index.html"><b> PokeDex</b></a>
+          <div><a href="./index.html"><b> PokeDex</b></a></div>
+          <button id="toggle" class="toggle-button"><div class="toggle"><i class="fa-solid fa-bars"></i></div></button>
         </div>
+        <!-- <div id="toggle-showcase" class="toggle-showcase" style="display: none"> -->
         <div class="left">
           <ul>
             <li><a class="header-elements" href="./index.html">Home</a></li>
             <li><a class="header-elements" href="./about.html">About</a></li>
-            <!-- <li><a class="header-elements" href="./contact.html">Contact</a></li> -->
           </ul>
         </div>
         <div class="right">
           <input type="text" id="data-search" placeholder="Article Search" />
           <button class="btn"><i class="fa fa-magnifying-glass"></i></button>
         </div>
+      <!-- </div> -->
       </nav>
       <!-- Navbar ends -->
-    </header>
+
+    <!-- Proximity hover -->
+    <!-- <main>
+      <img id="anchor" src="images/pikachu.png" alt="" height="180px" style="left: 300px;
+      top: 121px;">
+      <div id="eye-socket-left ">
+        <img class="eye" id="eye" src="./images/eyeBall.png" alt="" height="70px" style="top: 176px; left: 344px; height: 14px; border-radius: 10px; transform: rotate(200deg);">
+      </div>
+      <div class="eye-socket-right">
+        <img class="eye" id="eye" src="./images/eyeBall.png" alt="" height="70px" style="top: 186px; left: 380px; height: 14px; border-radius: 10px; transform: rotate(200deg);">
+      </div>
+      </div>
+    </main> -->
+    <!-- Pokemon cards -->
     <div class="container max-width-1 m-auto">
-        <!-- <h1>List of Pokemons</h1> -->
+        <!-- List of Pokemons -->
         <ul class="card" id="pokebox">
-            
         </ul>
     </div>
     <!-- Pagination -->
     <div class="pagination m-auto">
       <ul class="change" >
-        <button id="button_prev" >Previous</button>
+        <button id="button_prev">Previous</button>
         <span id="page_number"></span>
         <button id="button_next">Next</button>
       </ul>
@@ -60,5 +74,7 @@
       <p>copyright 2022 @md_arif</p>
     </div>
     <!-- Footer ends -->
+
+    
 </body>
 </html>

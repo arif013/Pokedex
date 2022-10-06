@@ -23,27 +23,56 @@
     font-size: 22px;
     font-family: var(--font5);
 }
-    
-.navigation > *{
-    flex: 1 1 auto;
-}
-.left ul{
-    display: inline-flex;
-    flex-direction: row;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-.middle{
-    font-size: 30px;
-    font-family: var(--font1);
-}
-.middle, .right, .left ul{
-    margin: 25px;
-}
-.left ul li {
-    list-style-type: none;
-    margin-top: 15px;
-    margin-right: 20px;
+@media(min-width:700px){
+    .navigation{
+        display: flex;
+    }
+    .navigation > *{
+        flex: 1 1 auto;
+    }
+
+    .left ul{
+        display: inline-flex;
+        flex-direction: row;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+    .toggle-showcase {
+        display: inline-flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .middle{
+        font-size: 30px;
+        font-family: var(--font1);
+    }
+    .middle button{
+        display: none;
+    }
+    .middle, .right, .left ul{
+        margin: 25px;
+    }
+    .left ul li {
+        list-style-type: none;
+        margin-top: 15px;
+        margin-right: 20px;
+    }
+    .right{
+        display: inline-flex;
+        max-width: 20%;
+        height: 45%;
+    }
+    .btn{
+        width: 20%;
+    }
+    .right input{
+        border-radius: 8px;
+        padding: 8px;
+        border: 1px solid white(0, 0, 0);
+        background: #f1f1f1;
+        color: black;
+        width: 85%;
+    }
 }
 .content a{
     /* font-size: 20px; */
@@ -51,3 +80,50 @@
     color: black;
 }
 
+@media(max-width:700px){
+    .middle {
+        padding: 10px 15px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 30px;
+        font-family: var(--font1);
+    }
+    .middle button:hover{
+        cursor: pointer;
+        color: red;
+    }
+    .navigation{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: fit-content;
+    }
+    .left{
+        text-align: center;
+    }
+    .left ul li {
+        list-style: none;
+        padding: 4px 0;
+    }
+    .right{
+        text-align: center;
+        /* display: flex; */
+
+    }
+    .right input{
+        width: 300px;
+        padding: 8px;
+        border-radius: 3px;
+    }
+    .toggle-button{
+        width: 50px;
+        background-color: rgb(251, 246, 93);
+        border: none;
+    }
+    .toggle{
+        width: 30px;
+        text-align: center;
+        font-size: 30px;
+    }
+}
