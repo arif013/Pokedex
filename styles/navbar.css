@@ -4,7 +4,7 @@
 
 }
 .navigation{
-    background-color: rgb(251, 246, 93);
+    background-color: var(--background-color);
     height: 74px;
     display: flex;
     justify-content: space-between;

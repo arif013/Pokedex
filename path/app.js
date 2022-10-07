@@ -13,7 +13,7 @@ searchInput.addEventListener("keyup", e=>{
     const value = e.target.value.toLowerCase();
     // console.log(value)
     const filterCharacters = pokemon.filter(character=>{
-        return character.name.includes(value)
+        return character.name.includes(value) || character.type.includes(value)
     })
     console.log(filterCharacters)
     displayPokemon(filterCharacters)
@@ -133,7 +133,6 @@ const observer = new IntersectionObserver((entries)=>{
 const hiddenElements = document.querySelector(".hidden");
 // hiddenElements.forEach((el)=> observer.observe(el));
 
-// Toggle button hide/visible
 
 
 
