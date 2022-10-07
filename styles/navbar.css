@@ -118,7 +118,7 @@
     }
     .toggle-button{
         width: 50px;
-        background-color: rgb(251, 246, 93);
+        background-color: var(--background-color);
         border: none;
     }
     .toggle{
