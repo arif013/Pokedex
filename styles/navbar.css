@@ -112,7 +112,7 @@
 
     }
     .right input{
-        width: 300px;
+        max-width: 300px;
         padding: 8px;
         border-radius: 3px;
     }
